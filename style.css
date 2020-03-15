@@ -1,0 +1,16 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+}
