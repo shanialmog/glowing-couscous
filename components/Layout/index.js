@@ -8,10 +8,18 @@ const Layout = (props) => (
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
         <Navbar />
-        {props.children}
+        <div className="children">
+            {props.children}
+        </div>
         <style jsx>{`
             .root {
                 font-family: Roboto;
+            }
+            .children{
+                margin: auto;
+                width: 50%;
+                padding: 10px;
+                text-align: center;
             }
         `}</style>
     </div>
