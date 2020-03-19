@@ -4,18 +4,18 @@ import Navbar from '../Navbar'
 const Layout = (props) => (
     <div className="root">
         <Head>
-            <title>Using next yo</title>
+            <title>Next yo</title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
         <Navbar />
-        <div className="children">
+        <div className="container">
             {props.children}
         </div>
         <style jsx>{`
             .root {
                 font-family: Roboto;
             }
-            .children{
+            .container{
                 margin: auto;
                 width: 50%;
                 padding: 10px;
