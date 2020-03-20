@@ -1,23 +1,12 @@
-import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
+import Home from '../components/Home'
 
 
-const Index = (props) => (
+const Index = () => (
     <Layout>
-        <h1>Home of Chuck</h1>
-        {props.data.value}
+        <Home/>
     </Layout>
 )
-
-Index.getInitialProps = async function() {
-    const res = await fetch
-    ('https://api.chucknorris.io/jokes/random')
-    const data = await res.json()
-    return {
-        data :data
-    }
-}
-
 
 
 export default Index
