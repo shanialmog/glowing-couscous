@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import fetch from 'node-fetch'
 import Button from '@material-ui/core/Button' 
 import { useEffect } from 'react'
@@ -29,14 +30,30 @@ const Home = () => {
             <div className="button">
                  <Button onClick={()=> fetchData()} variant="contained">More Chuck</Button>
              </div>
+             <div className="buttonc">
+                <Button variant="contained">
+                    <ul>
+                        <li><Link href="/chuck"><a>Add a Chuck joke</a></Link></li>
+                    </ul>
+                </Button>
+            </div>
             <style jsx>{`
                 .root .button {
                     margin-top: 30px;
+                    margin-bottom: 20px;
                 }
                 .header {
                     display: flex;
                     align-items: center;
                     justify-content center;
+                }
+                 li a {
+                 text-decoration: none;
+                 color: #000;
+                }
+                ul {
+                    list-style: none;
+                    padding-left: 0;
                 }
             `}</style>
         </div>

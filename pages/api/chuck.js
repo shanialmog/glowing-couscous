@@ -7,9 +7,13 @@ const jokes = [
 
 
 export default (req, res) => {
+    if (req.method === 'POST') {
+        jokes.push(req)
+    } else {
     res.statusCode = 200
     res.setHeader('Content-Type', 'application/json')
     const joke = jokes[Math.floor(Math.random() * jokes.length)]
     console.log(joke)
     res.end(JSON.stringify({joke}))
-  }
+    }
+}
