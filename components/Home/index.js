@@ -1,18 +1,18 @@
 import Link from 'next/link'
 import fetch from 'node-fetch'
-import Button from '@material-ui/core/Button' 
+import Button from '@material-ui/core/Button'
 import { useEffect } from 'react'
 import React, { useState } from 'react'
 
 const Home = () => {
-    const [ joke, setJoke ] = useState('')
+    const [joke, setJoke] = useState('')
 
     async function fetchData() {
         const res = await fetch("https://api.chucknorris.io/jokes/random")
         res
-          .json()
-          .then(res => setJoke(res))
-      }
+            .json()
+            .then(res => setJoke(res))
+    }
 
     useEffect(() => {
         fetchData()
@@ -26,11 +26,11 @@ const Home = () => {
                     <img src={joke.icon_url}></img>
                 </span>
             </div>
-                {joke.value}
+            {joke.value}
             <div className="button">
-                 <Button onClick={()=> fetchData()} variant="contained">More Chuck</Button>
-             </div>
-             <div className="buttonc">
+                <Button onClick={() => fetchData()} variant="contained">More Chuck</Button>
+            </div>
+            <div className="buttonc">
                 <Button variant="contained">
                     <ul>
                         <li><Link href="/chuck"><a>Add a Chuck joke</a></Link></li>
