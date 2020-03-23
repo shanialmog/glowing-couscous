@@ -22,7 +22,7 @@ const Chuck = () => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 'value': newJoke })
-        };
+        }
         fetch('/api/chuck', requestPost)
     }
     return (

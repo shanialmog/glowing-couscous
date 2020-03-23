@@ -8,10 +8,14 @@ const Home = () => {
     const [joke, setJoke] = useState('')
 
     async function fetchData() {
-        const res = await fetch("https://api.chucknorris.io/jokes/random")
+        // const res = await fetch("https://api.chucknorris.io/jokes/random")
+        const res = await fetch("/api/chuck")
         res
             .json()
-            .then(res => setJoke(res))
+            .then(res => {
+                console.log(res)
+                setJoke(res)
+            })
     }
 
     useEffect(() => {
@@ -23,7 +27,7 @@ const Home = () => {
             <div className="header">
                 <h1>Home of Chuck</h1>
                 <span>
-                    <img src={joke.icon_url}></img>
+                    <img src={"https://assets.chucknorris.host/img/avatar/chuck-norris.png"}></img>
                 </span>
             </div>
             {joke.value}
