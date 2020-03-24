@@ -17,7 +17,7 @@ const Chuck = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        alert(`Submitting Name ${newJoke}`);
+        alert(`Submitting Name ${newJoke}`)
         const requestPost = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
