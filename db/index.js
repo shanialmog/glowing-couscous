@@ -12,8 +12,8 @@ const Users = {
 }
 
 const Sessions = {
-    "abc123": "shani",
-    "abc124": "guy"
+    abc123: "shani",
+    abc124: "guy"
 }
 
 export {Users, Sessions}
