@@ -4,10 +4,10 @@ import { Users, Sessions } from "../../db"
 const LoginCheck = (req, res) => {
     if (typeof Users[req.body.username] !== "undefined") {
         if (Users[req.body.username].pass === req.body.pass) {
-            const newSessionId = Math.random().toString(36).substring(4)
+            const newSessionId = Math.random().toString(32).substring(4)
             Sessions[newSessionId] = req.body.username
-            res.setHeader('Set-Cookie', `sessionId=${newSessionId}; Secure; HttpOnly;`);
             //res.json({ newSessionId });
+            res.setHeader('Set-Cookie', `sessionId=${newSessionId}`);
             res.statusCode = 200
             console.log(Sessions)
         } else {
