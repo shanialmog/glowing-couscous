@@ -4,18 +4,28 @@ import Button from '@material-ui/core/Button'
 import { useEffect } from 'react'
 import React, { useState } from 'react'
 
+
+//practice promise
+const fetch_and_log = (url) => {
+    console.log("Sending GET request to Chuck..")
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(res => {
+                res.json().then(json => {
+                    console.log(json)
+                    resolve(json)
+                })
+            })
+    })
+}
+
 const Home = () => {
     const [joke, setJoke] = useState('')
 
     async function fetchData() {
         // const res = await fetch("https://api.chucknorris.io/jokes/random")
-        const res = await fetch("/api/chuck")
-        res
-            .json()
-            .then(res => {
-                console.log(res)
-                setJoke(res)
-            })
+        const res = await fetch_and_log("/api/chuck")
+        setJoke(res)
     }
 
     useEffect(() => {
